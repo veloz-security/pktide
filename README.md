@@ -24,6 +24,22 @@ Replace `eth0` with an interface listed by `-D`. Use `pktide-i386` on 32-bit Lin
 
 ## Downloads
 
+### Homebrew
+
+Install from the [devwooops tap](https://github.com/devwooops/homebrew-tap):
+
+```sh
+brew install devwooops/tap/pktide
+pktide --version
+pktide -r capture.pcap 'tcp port 443'
+```
+
+The tap installs a checksummed release executable as `pktide`, with no compilation or Python dependency. It supports Apple Silicon and Intel Macs, and Linux x86_64. This is a third-party tap, separate from `homebrew/core`. Homebrew has its own OS requirements; use the standalone downloads below for legacy systems and Linux i386.
+
+Update with `brew update` followed by `brew upgrade devwooops/tap/pktide`.
+
+### Standalone executables
+
 Choose the executable for your OS and CPU from [GitHub Releases](https://github.com/devwooops/pktide/releases):
 
 | File | Target |
