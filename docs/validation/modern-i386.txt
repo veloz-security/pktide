@@ -1,0 +1,31 @@
+Validation date: 2026-10-07
+Binary SHA256: 7274873a9fde7fccb963dbd82e9af82adee663848ada23edd864556546c3d723
+PASS dist/pktide-i386: 23,244 bytes, static i386, no interpreter/libc, NX stack
+test_bsd_loopback_link_types (__main__.CliTests.test_bsd_loopback_link_types) ... ok
+test_counter_limit_and_hex (__main__.CliTests.test_counter_limit_and_hex) ... ok
+test_help_version_interfaces (__main__.CliTests.test_help_version_interfaces) ... ok
+test_invalid_arguments (__main__.CliTests.test_invalid_arguments) ... ok
+test_invalid_pcaps (__main__.CliTests.test_invalid_pcaps) ... ok
+test_ipv6_address_forms (__main__.CliTests.test_ipv6_address_forms) ... ok
+test_link_types_and_large_declared_snaplen (__main__.CliTests.test_link_types_and_large_declared_snaplen) ... ok
+test_macos_any_is_explicitly_rejected (__main__.CliTests.test_macos_any_is_explicitly_rejected) ... skipped 'macOS-specific interface handling'
+test_no_clobber_or_symlink (__main__.CliTests.test_no_clobber_or_symlink) ... ok
+test_pcap_endian_and_nanosecond (__main__.CliTests.test_pcap_endian_and_nanosecond) ... ok
+test_protocols_and_filters (__main__.CliTests.test_protocols_and_filters) ... ok
+test_stdout_binary_is_clean (__main__.CliTests.test_stdout_binary_is_clean) ... ok
+test_truncation_fragments_and_bad_lengths (__main__.CliTests.test_truncation_fragments_and_bad_lengths) ... ok
+test_write_read_and_snaplen (__main__.CliTests.test_write_read_and_snaplen) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.638s
+
+OK (skipped=1)
+test_ipv6_loopback (__main__.LiveTests.test_ipv6_loopback) ... ok
+test_loopback_capture_and_replay (__main__.LiveTests.test_loopback_capture_and_replay) ... ok
+test_no_privilege (__main__.LiveTests.test_no_privilege) ... ok
+test_sigint_and_sigterm_cleanup (__main__.LiveTests.test_sigint_and_sigterm_cleanup) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.046s
+
+OK

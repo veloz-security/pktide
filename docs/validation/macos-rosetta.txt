@@ -1,0 +1,6 @@
+Validation date: 2026-10-07
+Host: macOS 26.2 arm64, Rosetta x86_64
+Binary SHA256: f7ad27c8407a788ab3c484feaaae3182077bf66d8c1899f11133a2f9f7ea28b4
+
+Command: python3 tests/test_cli.py --binary dist/pktide-macos --runner 'arch -x86_64'
+PASS: 14 CLI test groups

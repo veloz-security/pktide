@@ -1,0 +1,50 @@
+Validation date: 2026-10-07
+Binary SHA256: 486d9f3e7517ef82a824f1213198818aa6edd257254075e20bb32adfb1aa03e2
+make PLATFORM=linux ARCH=x86_64 all
+make[1]: Entering directory '/work'
+gcc -m64 -march=x86-64 -mtune=generic -mno-red-zone -std=c99 -Os -Wall -Wextra -Werror -Wshadow -Wconversion -Wstrict-prototypes -ffreestanding -fno-builtin -fno-stack-protector -fno-pie -fno-pic -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-ident -ffunction-sections -fdata-sections  -nostdlib -static -no-pie \
+  -Wl,--build-id=none,--gc-sections,-z,noexecstack  src/main.c src/runtime.c src/util.c src/decode.c src/filter.c src/start.S -o dist/pktide-x86_64
+make[1]: Leaving directory '/work'
+make PLATFORM=linux ARCH=i386 all
+make[1]: Entering directory '/work'
+gcc -m32 -march=i486 -mtune=generic -mno-sse -mno-mmx -msoft-float -std=c99 -Os -Wall -Wextra -Werror -Wshadow -Wconversion -Wstrict-prototypes -ffreestanding -fno-builtin -fno-stack-protector -fno-pie -fno-pic -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-ident -ffunction-sections -fdata-sections  -nostdlib -static -no-pie \
+  -Wl,--build-id=none,--gc-sections,-z,noexecstack  src/main.c src/runtime.c src/util.c src/decode.c src/filter.c src/start.S -o dist/pktide-i386
+make[1]: Leaving directory '/work'
+gcc -m64 -march=x86-64 -mtune=generic -mno-red-zone -std=c99 -Os -Wall -Wextra -Werror -Wshadow -Wconversion -Wstrict-prototypes -ffreestanding -fno-builtin -fno-stack-protector -fno-pie -fno-pic -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-ident -ffunction-sections -fdata-sections -Isrc -nostdlib -static -no-pie \
+  -Wl,--build-id=none,--gc-sections,-z,noexecstack tests/vm_init.c src/runtime.c src/util.c src/start.S -o build/vm-init-x86_64
+gcc -m32 -march=i486 -mtune=generic -mno-sse -mno-mmx -msoft-float -std=c99 -Os -Wall -Wextra -Werror -Wshadow -Wconversion -Wstrict-prototypes -ffreestanding -fno-builtin -fno-stack-protector -fno-pie -fno-pic -fno-unwind-tables -fno-asynchronous-unwind-tables -fno-ident -ffunction-sections -fdata-sections -Isrc -nostdlib -static -no-pie \
+  -Wl,--build-id=none,--gc-sections,-z,noexecstack tests/vm_init.c src/runtime.c src/util.c src/start.S -o build/vm-init-i386
+python3 tests/verify_elf.py dist/pktide-x86_64 x86_64
+PASS dist/pktide-x86_64: 24,176 bytes, static x86_64, no interpreter/libc, NX stack
+python3 tests/test_cli.py --binary dist/pktide-x86_64 --runner ''
+test_bsd_loopback_link_types (__main__.CliTests.test_bsd_loopback_link_types) ... ok
+test_counter_limit_and_hex (__main__.CliTests.test_counter_limit_and_hex) ... ok
+test_help_version_interfaces (__main__.CliTests.test_help_version_interfaces) ... ok
+test_invalid_arguments (__main__.CliTests.test_invalid_arguments) ... ok
+test_invalid_pcaps (__main__.CliTests.test_invalid_pcaps) ... ok
+test_ipv6_address_forms (__main__.CliTests.test_ipv6_address_forms) ... ok
+test_link_types_and_large_declared_snaplen (__main__.CliTests.test_link_types_and_large_declared_snaplen) ... ok
+test_macos_any_is_explicitly_rejected (__main__.CliTests.test_macos_any_is_explicitly_rejected) ... skipped 'macOS-specific interface handling'
+test_no_clobber_or_symlink (__main__.CliTests.test_no_clobber_or_symlink) ... ok
+test_pcap_endian_and_nanosecond (__main__.CliTests.test_pcap_endian_and_nanosecond) ... ok
+test_protocols_and_filters (__main__.CliTests.test_protocols_and_filters) ... ok
+test_stdout_binary_is_clean (__main__.CliTests.test_stdout_binary_is_clean) ... ok
+test_truncation_fragments_and_bad_lengths (__main__.CliTests.test_truncation_fragments_and_bad_lengths) ... ok
+test_write_read_and_snaplen (__main__.CliTests.test_write_read_and_snaplen) ... ok
+
+----------------------------------------------------------------------
+Ran 14 tests in 1.141s
+
+OK (skipped=1)
+python3 tests/verify_elf.py dist/pktide-x86_64 x86_64
+PASS dist/pktide-x86_64: 24,176 bytes, static x86_64, no interpreter/libc, NX stack
+python3 tests/test_live.py --binary dist/pktide-x86_64 --runner ''
+test_ipv6_loopback (__main__.LiveTests.test_ipv6_loopback) ... ok
+test_loopback_capture_and_replay (__main__.LiveTests.test_loopback_capture_and_replay) ... ok
+test_no_privilege (__main__.LiveTests.test_no_privilege) ... ok
+test_sigint_and_sigterm_cleanup (__main__.LiveTests.test_sigint_and_sigterm_cleanup) ... ok
+
+----------------------------------------------------------------------
+Ran 4 tests in 0.049s
+
+OK

@@ -1,0 +1,11 @@
+Validation date: 2026-10-07
+Host: macOS 26.2 arm64
+Binary SHA256: f7ad27c8407a788ab3c484feaaae3182077bf66d8c1899f11133a2f9f7ea28b4
+
+PASS: make macos; make test
+PASS: Universal arm64 + x86_64, PIE, macOS 11.0 target, ad-hoc signature, system libSystem only
+PASS: 14 CLI test groups
+PASS: BPF batch parser under ASan + UBSan
+PASS: make sanitize (100,000 packet inputs, 10,000 filter inputs, integer/address checks)
+NOT TESTED: live BPF capture (sudo authentication required)
+PASS: macOS system tcpdump reads pktide-written PCAP

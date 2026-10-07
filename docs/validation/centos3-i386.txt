@@ -1,0 +1,30 @@
+Validation date: 2026-10-07
+Binary SHA256: 7274873a9fde7fccb963dbd82e9af82adee663848ada23edd864556546c3d723
+Kernel RPM SHA256: 4a8432e9341d8401d05764de67391b5277b501acb1172167ed1588c0d6ec2f67
+128-byte inodes cannot handle dates beyond 2038 and are deprecated
+VM kernel: 2.4.21-9.0.1.EL.c0 arch: i686
+VM PASS: assign loopback IPv4 address
+VM PASS: assign loopback netmask
+VM PASS: bring loopback up
+pktide 0.1.0 Linux/i386 static, no libc; Linux 2.4.21 ABI target
+VM PASS: version
+pktide: seen=11 matched=3 matched_bytes=210
+VM PASS: PCAP filter replay
+pktide: listening on lo (Ethernet), Ctrl-C to stop
+VM PASS: send loopback UDP
+pktide: seen=1 matched=1 matched_bytes=53 socket_packets=4 socket_drops=0
+VM PASS: live loopback Ethernet capture
+pktide: seen=1 matched=1 matched_bytes=53
+VM PASS: live PCAP replay
+pktide: listening on any (Linux SLL), Ctrl-C to stop
+VM PASS: send loopback UDP
+pktide: seen=1 matched=1 matched_bytes=55 socket_packets=4 socket_drops=0
+VM PASS: live any/SLL capture
+pktide: listening on lo (Ethernet), Ctrl-C to stop
+pktide: seen=0 matched=0 matched_bytes=0 socket_packets=0 socket_drops=0
+VM PASS: SIGINT cleanup
+pktide: listening on lo (Ethernet), Ctrl-C to stop
+pktide: seen=0 matched=0 matched_bytes=0 socket_packets=0 socket_drops=0
+VM PASS: SIGTERM cleanup
+PKTIDE_VM_SUCCESS
+PASS: real 2.4.21-9.0.1.EL.c0 kernel / i386; full boot log: /work/build/vm/centos3/i386/console.log
